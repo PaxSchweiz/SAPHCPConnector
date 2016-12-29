@@ -25,11 +25,12 @@ MAINTAINER Martin Weber Nissle <martin.webernissle@pax.ch>
 
 # Install dependencies and the SAP packages
 RUN cd && \
-    yum -y install initscripts which && \
-    curl -O -k https://TOBESET/sap/com.sap.scc-ui-1.5.1-4.x86_64.rpm && \
-    curl -O -k https://TOBESET/sap/sapjvm-7.1.042-linux-x64.rpm && \
+    yum -y install initscripts which unzip wget && \
+    wget --no-check-certificate --no-cookies --header "Cookie: eula_3.1_agreed=tools.hana.ondemand.com/developer-license-3.1.txt; path=/;" -S https://tools.hana.ondemand.com/additional/sapcc-2.9.0.2-linux-x64.zip && \
+    unzip sapcc-2.9.0.2-linux-x64.zip && \
+    wget --no-check-certificate --no-cookies --header "Cookie: eula_3.1_agreed=tools.hana.ondemand.com/developer-license-3.1.txt; path=/;" -S https://tools.hana.ondemand.com/additional/sapjvm-7.1.042-linux-x64.rpm && \
     rpm -i sapjvm-7.1.042-linux-x64.rpm && \
-    rpm -i com.sap.scc-ui-1.5.1-4.x86_64.rpm
+    rpm -i com.sap.scc-ui-2.9.0-7.x86_64.rpm
 
 # Stop the service as it is started just after installation through rpm. Docker depends on a single foreground process - therefore the java process must be started directly and not through a service script.
 RUN service scc_daemon stop
