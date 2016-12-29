@@ -41,4 +41,6 @@ su sccadmin -s /bin/bash -c echo  | "/opt/sapjvm_7/bin/java" -server -XtraceFile
 ```
 
 ## More information on the SAP HCP Connector
-See: https://hcp.sap.com/capabilities/integration/hana-cloud-connector.html 
+See: https://hcp.sap.com/capabilities/integration/hana-cloud-connector.html
+
+Download link: https://tools.hana.ondemand.com/#cloud
