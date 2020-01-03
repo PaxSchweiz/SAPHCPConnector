@@ -1,5 +1,5 @@
 # SAPHCPConnector
-Docker the SAP HANA Cloud Platform Connector.
+Docker the SAP Cloud Platform Connector.
 
 This docker exposes the connector on port 8443. If you leave it on port 8443 you can access it after running
 the docker through the URL: ```https://<hostname>:8443```
@@ -13,8 +13,8 @@ This is provided as is, licensed with the Apache License 2.0.
 ## Build the docker
 to build the docker image out of this Dockerfile with tag (for example version no):
 ```
-docker build -t name/sap-hcpconnector:1.0 .
-docker push name/sap-hcpconnector:1.0
+docker build -t name/sap-hcpconnector:latest .
+docker push name/sap-hcpconnector:latest
 ```
 
 ## Debug the docker image
